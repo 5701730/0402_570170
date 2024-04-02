@@ -1,10 +1,10 @@
 ﻿#include <stdio.h>
-#define max_terms 200
+#define MAX_TERMS 200
 
 struct term {
 	float coef;
 	int expon;
-}terms[max_terms] = {
+}terms[MAX_TERMS] = {
 	{4.0, 3}, {3.0, 2}, {2.0, 1}, {1.0, 0},
 	{3.0, 2}, {2.0, 1}, {8.0, 0}
 };
