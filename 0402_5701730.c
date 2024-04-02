@@ -46,7 +46,7 @@ void poly_multiply(int as, int ae, int bs, int be, int* cs, int* ce) {
             coef = terms[i].coef * terms[j].coef;
             expon = terms[i].expon + terms[j].expon;
 
-            for (l = avail; l <= k; l++) {
+            for (l = avail; l <= k; l++) {//i<k이면 x^0이 출력이 안됨
                 if (terms[l].expon == expon) {
                     terms[l].coef += coef;
                     break;
@@ -64,7 +64,7 @@ void poly_multiply(int as, int ae, int bs, int be, int* cs, int* ce) {
 
     // 결과 다항식의 시작 및 종료 인덱스 업데이트
     *cs = avail;
-    *ce = k;
+    *ce = k;//k-1이면 x^0이 출력이 안됨
 
     // 사용 가능한 공간 업데이트
     avail = k;
